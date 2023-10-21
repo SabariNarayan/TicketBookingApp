@@ -1,0 +1,88 @@
+tbody td {
+    /* 1. Animate the background-color
+       from transparent to white on hover */
+    background-color: rgba(255,255,255,0);
+    transition: all 0.2s linear; 
+    transition-delay: 0.3s, 0s;
+    /* 2. Animate the opacity on hover */
+    opacity: 0.6;
+    font-size: large;
+  }
+  tbody tr:hover td {
+    background-color: rgb(1, 27, 62);
+    transition-delay: 0s, 0s;
+    opacity: 1;
+    font-size: 2em;
+  }
+  
+  td {
+    /* 3. Scale the text using transform on hover */
+    transform-origin: center left;
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+  }
+  tr:hover td {
+    transform: scale(1.1);
+  }
+  
+  
+  
+  
+  
+  /* Codepen styling */
+  * { box-sizing: border-box }
+  
+  table {
+    width: 90%;
+    margin: 0 5%;
+    text-align: left;
+    margin-top: 50px;
+    border: 5px solid ;
+    color: aqua;
+    background-color: rgba(0, 0, 0, 0.797);
+    
+    
+  }
+  th, td {
+    padding: 0.5em;
+  }
+  
+  body {
+    display: flex;
+    height: 100vh;
+    background: hsl(232, 22%, 90%);
+    color: rgba(95, 17, 232, 1);
+  }
+  
+  body > *  {
+    margin: auto;
+  }
+  
+  .delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .delete-button:hover {
+    background-color: darkred;
+  }
+  
+  .cancel {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: red;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .cancel:hover {
+    background-color: red;
+    color: white;
+  }

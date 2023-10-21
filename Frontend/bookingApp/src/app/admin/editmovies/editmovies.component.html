@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                            <h4 class="title">Movie<span>List</span></h4>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 text-right">
+                            <div class="btn_group">                             
+                                <button class="btn btn-default" title="Reload" (click)="reloadTable()" style="padding-right: 10px;"><i class="fa fa-sync-alt"></i></button>
+                                <button class="btn btn-default" title="Reload" routerLink="../"><i class="fas fa-times"></i></button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                  <form>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Movie Name</th>
+                          <th>Movie Timings</th>
+                          <th>Ticket Rate</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let movie of movies; let i = index">
+                          <td>{{ i + 1 }}</td>
+                          <td>{{ movie.movieName }}</td>
+                          <td>
+                              {{movie.movieTimings}}
+                          </td>
+                          <td>
+                            {{movie.ticketRates}}
+                          </td>
+                          <td>
+                            <ul class="action-list">
+                              <li><a type="submit" data-tip="Edit" [routerLink]="'/dashboard/editmovie/edittimerate/'+ movie._id" ><i class="fas fa-pencil-alt"></i>Edit</a></li>
+                            </ul>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <router-outlet></router-outlet>
+                  </form>
+                  
+                      
+                    
+                <div class="panel-footer">
+                    
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

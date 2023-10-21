@@ -1,0 +1,38 @@
+.navbar{
+    background-color: #12232e76;
+    height: 60px;
+    z-index: 100;
+    
+    
+      }
+    
+      .navbar-nav .nav-item .nav-link {
+        color: white !important;
+      }
+      
+      #head{
+        margin-top:70px;
+      }
+
+      .image-container {
+        border-radius: 5px;
+        border: 2px solid #007cc7;
+        height: 40px;
+    }
+
+    .nav-link {
+      color: #ffffff; /* Text color */
+      text-decoration: none; /* Remove underlines */
+      font-weight: bold; /* Make the text bold */
+      transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+    }
+    
+    /* Hover styles */
+    .nav-link:hover {
+      color: #ff5500; /* Change color on hover */
+    }
+    
+    /* Active link styles (if needed) */
+    .nav-link.active {
+      color: #ff0000; /* Style for the active link */
+    }

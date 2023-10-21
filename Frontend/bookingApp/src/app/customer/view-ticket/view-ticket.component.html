@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                            <h4 class="title">Booked<span>Tickets</span></h4>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 text-right">
+                            <div class="btn_group">
+                                <button class="btn btn-default" title="Reload"  style="padding-right: 10px;" (click)="reloadTable()"><i class="fa fa-sync-alt"></i></button>
+                                <button class="btn btn-default" title="Reload" routerLink="../"><i class="fas fa-times"></i></button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                  <form>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Movie Name</th>
+                          <th>Number of tickets Booked</th>  
+                          <th>showtime</th>              
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let ticket of tickets; let i = index">
+
+                          <td>{{ i + 1 }}</td>
+                          <td>{{ticket.movieName}}</td>
+                          <td>
+                              {{ticket.numOfTickets}}
+                          </td>
+                          <td>{{ticket.showtime}}</td>
+                          <td>
+                            <ul class="action-list">
+                              <li>
+                                <a type="submit" data-tip="cancel" (click)="userId && cancelTicket(ticket._id, userId)">
+                                  <i class="fas fa-trash-alt"></i> Cancel Ticket
+                                </a>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                  
+                      
+                    
+                <div class="panel-footer">
+                    
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,72 @@
+<div class="outer-box">
+  <div class="login-box">
+    <h2>Add Movie</h2>
+    <form (submit)="onSubmit()">
+      <div class="user-box">
+        <input type="text" name="movieName"  [(ngModel)]="movieData.movieName">
+        <label>Movie Name</label>
+      </div>
+      <div class="user-box">
+        <input type="text" name="cast" [(ngModel)]="movieData.cast">
+        <label>Cast</label>
+      </div>
+      <div class="user-box">
+        <input type="text" name="languages" [(ngModel)]="movieData.languages">
+        <label>Languages</label>
+      </div>
+      <div class="user-box">
+        <input type="text" name="description" [(ngModel)]="movieData.description">
+        <label>Description</label>
+      </div>
+      <div class="user-box">
+        <input type="text" name="ticketRates" [(ngModel)]="movieData.ticketRates">
+        <label>Ticket rate</label>
+      </div>
+      <div class="user-box">
+        <input type="text" [(ngModel)]="movieData.movieTimingsString" name="movieTimingsString">
+        <label>Show Timings</label>
+        </div>
+      <div class="user-box">
+        <input type="number" name="seatsAvailable" [(ngModel)]="movieData.seatsAvailable">
+        <label>Number of seats</label>
+      </div>
+      <div class="user-box">
+        <input type="url" name="image" [(ngModel)]="movieData.image" >
+        <label>Poster Url</label>
+      </div>
+      <div class="user-box">
+        <label >Category</label>
+        <br><br>
+        <select name="category" id="category" [(ngModel)]="movieData.category">
+          <option value="UA">UA</option>
+          <option value="A">A</option>
+          <option value="PG">PG</option>
+          <option value="G">G</option>
+        </select>
+      </div>
+      <a (click)="onSubmit()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </a>
+      <a routerLink="/dashboard">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        cancel
+      </a>
+    </form>
+    
+</div>
+</div>
+   
+
+
+
+
+
+
+

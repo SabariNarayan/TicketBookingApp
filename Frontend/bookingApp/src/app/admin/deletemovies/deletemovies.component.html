@@ -1,0 +1,17 @@
+<table>
+    <thead>
+      <tr>
+        <th>Movie</th>
+        <th>Delete Box</th>
+        <th> <button class="cancel" routerLink="/dashboard">cancel</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <td>{{ movie.movieName }}</td>
+        <td>
+          <button class="delete-button" (click)="deleteMovie(movie._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

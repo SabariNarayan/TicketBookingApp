@@ -1,0 +1,91 @@
+.image-container {
+    border-radius: 5px;
+    border: 2px solid #007cc7;
+    height: 40px;
+}
+
+.btn1 {
+    margin-left: 10px;
+    margin-top: -2px;
+    width: 110px;
+    font-size: 18px;
+    height: 39px;
+    border: none;
+    outline: none;
+    background: #007cc7;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+  .btn1::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(
+      124deg,
+      
+      #ffffff,
+      #710707,
+      #dd00f3
+    );
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    animation: move 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .btn1:hover::before {
+    opacity: 1;
+  }
+  
+  
+  @keyframes move {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .nav-link {
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Remove underlines */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+    margin-right: 5px;
+  }
+  
+  /* Hover styles */
+  .nav-link:hover {
+    color: #ff5500; /* Change color on hover */
+  }
+  
+  /* Active link styles (if needed) */
+  .nav-link.active {
+    color: #ff0000; /* Style for the active link */
+  }
+  
+  /* background animation */
+  
+  @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
+  
+  :root {
+    /* Colors */
+    --brand-color: hsl(46, 100%, 50%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    /* Fonts */
+    --font-title: "Montserrat", sans-serif;
+    --font-text: "Lato", sans-serif;
+  }

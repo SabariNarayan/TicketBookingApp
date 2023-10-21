@@ -1,0 +1,23 @@
+
+<mat-card>
+    <div class="card" style="width: 35rem; height: 40rem;">
+      <img [src]="data.image" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3 class="card-title">{{data.movieName}}</h3>
+        <p class="card-text">{{data.description}}</p>
+        <p class="card-text">CAST : {{data.cast}}</p>
+        <p class="card-text">{{data.review}}</p>
+        <div class="buttons">
+            <div class="container">
+                <a [routerLink]="'/ticket/' + movie._id" class="btn effect04" data-sm-link-text="CLICK" (click)="onClose()"><span>Book Now</span></a>
+
+            </div>
+            <div> <p> Already watched?</p></div>
+            <div class="container">
+              <a routerLink="/dashboard/add-review"  class="btn effect05" data-sm-link-text="CLICK" (click)="onClose()" ><span>Write A review</span></a>
+          </div>
+          </div>
+      </div>
+    </div>
+  </mat-card>
+  

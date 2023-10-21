@@ -1,0 +1,92 @@
+
+<body>
+    <nav class="navbar navbar-expand-lg " style="background-color: rgba(0, 0, 0, 0.212);">
+        <div class="container">
+          <img class="image-container" src="assets/Screenshot (18).png" alt="" height="45" width="150">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+
+              <div style="margin: 0px 10px;" class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dashboardMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dashboard Menu
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dashboardMenu">
+                  <li><a class="dropdown-item" routerLink="/dashboard/view-ticket">View Booked Tickets</a></li>
+                </ul>
+              </div>
+              
+              
+              <div class="dropdown" *ngIf="isAdminRole()">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Admin-Panel
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item active" routerLink="/dashboard/addmovie">Add Movie</a></li>
+                  <li><a class="dropdown-item" routerLink="/dashboard/deletemovie">Delete Movie</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" routerLink="/dashboard/editmovie">Add/Edit: Timings and Ticket Charge</a></li>
+                </ul>
+              </div>
+              <li>
+                <div class="stage">
+                  <button class="btn1" (click)="logout()" style="background-color: rgb(255, 0, 0);">Logout</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <router-outlet></router-outlet>
+
+ <div class="moviedash">
+  <div class="waviy">
+    <span style="--i:1">N</span>
+    <span style="--i:2">o</span>
+    <span style="--i:3">w</span>
+    <span style="--i:4">P</span>
+    <span style="--i:5">L</span>
+    <span style="--i:6">A</span>
+    <span style="--i:7">Y</span>
+    <span style="--i:8">I</span>
+    <span style="--i:9">N</span>
+    <span style="--i:10">G</span>
+ 
+   </div>
+  
+  
+   <div class="movie-grid">
+    <article class="card" *ngFor="let movie of movies">
+      <img
+        class="card__background"
+        [src]="movie.image" 
+        width="1920"
+        height="2193"
+      />
+      <div class="card__content | flow">
+        <div class="card__content--container | flow">
+          <h2 class="card__title">{{ movie.movieName }}</h2>
+          <p class="card__description">
+            Category: {{ movie.category }}
+          </p>
+          <p>Languages: {{ movie.languages?.join(', ') }}</p>
+          <p>Average Rating: {{ movie.averageRating }}</p>
+          <p *ngIf="isAdminRole()">No. of Tickets Sold per Day: {{ movie.ticketsSoldPerDay }}</p>
+
+          <button class="book-now-button" [routerLink]="'/dashboard/movie/' + movie._id" (click)="openDialog(movie)"> book now</button>
+        </div>
+      </div>
+    </article>
+  </div>
+  
+ </div>
+      
+    
+</body>
+    
+
+      
+
+  

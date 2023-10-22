@@ -32,8 +32,6 @@ export class AddmovieService {
     );
   }
 
-
-
   getMovieById(movieId: string): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/api/movies/${movieId}`);
   }
@@ -48,4 +46,16 @@ export class AddmovieService {
     const url = `${this.baseUrl}/api/movies/${movieId}`; // Update the URL with the correct endpoint
     return this.http.delete<void>(url);
   }
+
+  postReview(reviewData: any): Observable<any> {
+    const url = `${this.baseUrl}/api/reviews`;
+    return this.http.post(url, reviewData);
+  }
+
+  getMovieRatings(movieId: string): Observable<any[]> {
+    const ratingsUrl = `${this.baseUrl}/api/reviews/${movieId}`;
+  
+    return this.http.get<any[]>(ratingsUrl);
+  }
+  
 }

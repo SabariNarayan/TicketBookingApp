@@ -161,3 +161,23 @@ mat-card {
     -webkit-transform: translateY(0) scale(1,1);
             transform: translateY(0) scale(1,1);
   }
+
+/* CSS class for the review cards */
+.card-body1 {
+  background-color: #007cc7;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+/* CSS class for star ratings */
+.star-rating {
+  font-size: 20px;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+}
+
+.star-filled {
+  color: yellow;
+}

@@ -1,23 +1,44 @@
 
-<mat-card>
+<mat-card style="width:max-content ; height :auto">
     <div class="card" style="width: 35rem; height: 40rem;">
       <img [src]="data.image" class="card-img-top" alt="...">
-      <div class="card-body">
+      <div class="card-body" >
         <h3 class="card-title">{{data.movieName}}</h3>
         <p class="card-text">{{data.description}}</p>
         <p class="card-text">CAST : {{data.cast}}</p>
-        <p class="card-text">{{data.review}}</p>
         <div class="buttons">
             <div class="container">
                 <a [routerLink]="'/ticket/' + movie._id" class="btn effect04" data-sm-link-text="CLICK" (click)="onClose()"><span>Book Now</span></a>
-
             </div>
             <div> <p> Already watched?</p></div>
-            <div class="container">
-              <a routerLink="/dashboard/add-review"  class="btn effect05" data-sm-link-text="CLICK" (click)="onClose()" ><span>Write A review</span></a>
           </div>
+          <div>
+            <app-add-review (reviewPosted)="handleReviewPosted($event)" [movieId]="movie._id"></app-add-review>
           </div>
+          <br>
+          <h3>Movie Reviews</h3>
+          <div *ngFor="let rating of movieRatings" class="card-body1"  >
+          <h3 class="card-title" style="font-size: medium; ">{{rating.name}}</h3>
+          <p class="card-text" style="color: white; font-size: small; ">{{rating.text}}</p>
+          <p class="card-text">
+            <p class="card-text">
+              <span class="star-rating">
+                <i class="fas fa-star" [ngClass]="{ 'star-filled': rating.rating >= 1 }"></i>
+              </span>
+              <span class="star-rating">
+                <i class="fas fa-star" [ngClass]="{ 'star-filled': rating.rating >= 2 }"></i>
+              </span>
+              <span class="star-rating">
+                <i class="fas fa-star" [ngClass]="{ 'star-filled': rating.rating >= 3 }"></i>
+              </span>
+              <span class="star-rating">
+                <i class="fas fa-star" [ngClass]="{ 'star-filled': rating.rating >= 4 }"></i>
+              </span>
+              <span class="star-rating">
+                <i class="fas fa-star" [ngClass]="{ 'star-filled': rating.rating >= 5 }"></i>
+              </span>
+            </p>
+           </div>
       </div>
     </div>
   </mat-card>
-  

@@ -1,45 +1,35 @@
 
-               
-     
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
-            <div class="card">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="comment-box ml-2">
-                            <h4>Add a review</h4>
-                            <div class="rating">
-                                <div class="rating"> 
-                                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
-                                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                                    <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                                </div>
-                                <!-- Your rating inputs here -->
-                            </div>
-                            <div class="comment-area">
-                                <textarea class="form-control" placeholder="What is your view?" rows="4"></textarea>
-                            </div>
-                            <div class="comment-btns mt-2">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="pull-left">
-                                            <button class="btn btn-success btn-sm" routerLink="../">Cancel</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pull-right">
-                                            <button class="btn btn-success send btn-sm">Send <i class="fa fa-long-arrow-right ml-1"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+                <form id="algin-form">
+
+                    <div class="form-group">
+                        <label  for="rating">Star Rating</label>
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="reviewData.rating">
+                            <label for="star5" title="5 stars"></label>
+                            <input type="radio" id="star4" name="rating" value="4" [(ngModel)]="reviewData.rating">
+                            <label for="star4" title="4 stars"></label>
+                            <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="reviewData.rating">
+                            <label for="star3" title="3 stars"></label>
+                            <input type="radio" id="star2" name="rating" value="2" [(ngModel)]="reviewData.rating">
+                            <label for="star2" title="2 stars"></label>
+                            <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="reviewData.rating">
+                            <label for="star1" title="1 star"></label>
+                          </div>
                     </div>
-                </div>
+                    
+                    <div class="form-group">
+                        <h4>Leave a review</h4>
+                        <label  for="message">Review</label>
+                        <textarea name="text" id=""msg cols="30" rows="5" class="form-control" style="background-color: rgb(255, 255, 255);" [(ngModel)]="reviewData.text"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="fullname" class="form-control" [(ngModel)]="reviewData.name">
+                    </div>                   
+                    <div class="form-group">
+                        <button type="button" id="post" class="btn" (click)="submitReview()">Post review</button>
+                    </div>
+                </form>
             </div>
-        </div>
-    </div>
-</div>
+   

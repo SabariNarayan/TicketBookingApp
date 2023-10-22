@@ -41,6 +41,7 @@ export class EditTimeRateComponent implements OnInit {
     if (this.movieForm.valid) {
       const newMovieTimings = this.movieForm.get('movieTimings')?.value;
       const ticketRates = this.movieForm.get('ticketRates')?.value;
+      
   
       if (newMovieTimings || ticketRates) {
         // At least one of the fields has a value, proceed with the update
@@ -48,8 +49,13 @@ export class EditTimeRateComponent implements OnInit {
   
         if (newMovieTimings) {
           // Remove existing movie timings that are not in the new timings
-          this.movie.movieTimings = this.movie.movieTimings.filter((existingTiming: string) => newMovieTimings.includes(existingTiming));
-  
+          if (this.movie.movieTimings) {
+            this.movie.movieTimings = this.movie.movieTimings.filter((existingTiming: string) => newMovieTimings.includes(existingTiming));
+          } else {
+            this.movie.movieTimings = [];
+          }
+          
+
           // Split the new movieTimings into an array
           const newTimingsArray = newMovieTimings.split(',').map((time: string) => time.trim());
   
